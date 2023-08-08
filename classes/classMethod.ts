@@ -2,24 +2,29 @@
 
 //Super class
 class Vehicle {
-  drive(): void {
+  public drive(): void {
     console.log('chugga chugga')
   }
 
-  honk(): void {
+  protected honk(): void {
     console.log('beep')
   }
 }
 
 //Child class
 class Car extends Vehicle {
-  drive() : void {
+  private drive() : void {
     console.log('vroom')
+  }
+
+  startDrivingProcess(): void {
+    this.drive();
+    this.honk();
   }
 
 }
 
 const car = new Car();
 
-car.drive();
+car.startDrivingProcess();
 car.honk();
